@@ -6,7 +6,7 @@
 
 
 ## Necesario Firebase
-<b>Se Crea Proyecto en Firebase con Authentication y Firestore Database</b>
+<b>Se Crea Proyecto en Firebase con Authentication y Firestore Database</b><br>
 `npm install firebase`<br>
 `ng add @angular/fire`<br>
 `npm install -g firebase-tools`<br>
@@ -17,6 +17,24 @@
 (Seleccionamos el proyecto creado con Firebase (sistemas-inventario))<br>
 
 `firebase login`<br>
+
+## Firebase DEPLOY
+`firebase init` 
+(Firestore: Configure security rules and indexes files for Firestore)  -- Crear Base de datos NoSQL
+(Hosting - Configure files for Firebase hosting and (optionally) set up GitHub Actiod deploys)<br>
+
+(Use an existing project)<br>
+(Seleccionamos nuestro proyecto (SISTEMAS-INVENTARIO))<br>
+(What file should be used for Firestore Rules? (firestore.rules))<br>
+(What file should be used for Firestore indexes? (firestore.indexes.json))<br>
+(What do you want to use as your public directory? (public)) <b> quitamos public y colocamos la siguiente ruta</b>
+<b>dist/sistemas-inventario/browser</b><br>
+(Configure as a single-page app (rewrite all urls to /index.html)? (y/N)) yes
+(Set up automatic builds and deploys with GitHub? (y/N)) no
+<b>Firebase initialization complete!</b>
+
+`ng build` <br>
+`firebase deploy`<br>
 
 ## Creación de Proyecto Angular
 `ng new Sistemas-Inventario` (Se crea con CSS)<br>
