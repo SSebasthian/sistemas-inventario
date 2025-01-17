@@ -36,5 +36,8 @@
 `ng build` <br>
 `firebase deploy`<br>
 
+<b>https://sistemas-inventario.web.app/ </b>
+
 ## Creación de Proyecto Angular
 `ng new Sistemas-Inventario` (Se crea con CSS)<br>
+`ng generate component pagina/autenticacion/acceso` (Acceso)<br>
