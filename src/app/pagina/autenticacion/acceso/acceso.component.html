@@ -8,14 +8,16 @@
     <div class="formulario-contenido">
         <h1>Iniciar Sesion</h1>
         <!-- ACCION A ENVIAR FORM -->
-        <form>
+        <form  [formGroup]="formularioAcceso" (ngSubmit)="envioAcceso()">
 
             <!-- CAMPO CORREO -->
             <div>
                 <mat-form-field class="grupo-formulario" appearance="outline">
                 <mat-icon class="icon-form"> mail_outline</mat-icon>
                 <mat-label>Correo</mat-label>
-                <input type="email" matInput />
+                <input matInput formControlName="email" />
+                <!-- MENSAJE SI EL DATO INGRESADO ESTA INVALIDO -->
+                <mat-error *ngIf="validacionCorreo as message">{{ message }}</mat-error>
                 </mat-form-field>
             </div>
 
@@ -28,6 +30,7 @@
                     <input 
                         matInput formControlName="password"
                         [type]="mostrarOcultarClave ?  'password' : 'text'"
+                        formControlName="password"
                     />
                     <a 
                         mat-icon-button
@@ -38,6 +41,8 @@
                     >
                         <mat-icon class="icon-mostrar-ocultar">{{ mostrarOcultarClave ? "visibility_off" : "visibility" }}</mat-icon>
                     </a>
+                    <!-- VALIDA CAMPO CONTRASEÑA -->
+                    <mat-error>Campo Requerido</mat-error>
                 </mat-form-field>
             </div>
 
