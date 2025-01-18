@@ -17,5 +17,6 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './acceso.component.css'
 })
 export class AccesoComponent {
-
+  // Mostrar - Ocultar Contraseña FORMULARIO
+  mostrarOcultarClave = true;
 }
