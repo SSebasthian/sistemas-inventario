@@ -1,0 +1,90 @@
+/* ***************************** */
+/*     CONTENDIDO FORM           */
+/* ***************************** */
+
+/* CONTENIDO */
+.contenedor-acceso{
+    width: 80%;
+    height: 350px;
+    display: flex;                /* Usamos Flexbox */
+    justify-content: center;      /* Centrado horizontal */
+    align-items: center;          /* Centrado vertical */
+    margin: auto;
+    padding: 80px 0px;
+    overflow: hidden;
+}
+
+/* TITULO */
+.formulario-contenido h1{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: #a6a6a6;
+    padding-bottom: 10px;
+}
+
+/* COLUMNA FORMULARIO */
+.contenedor-acceso .formulario-contenido{
+    width: 350px;
+    padding: 30px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    border-radius: 7px;
+} 
+.contenedor-acceso .formulario-contenido .grupo-formulario{
+    width: 95%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}   
+.contenedor-acceso .formulario-contenido mat-label{
+    color: #777;
+    margin: 0;
+    padding-left: 15px;
+    font-weight: 500;
+} 
+.contenedor-acceso .formulario-contenido .icon-form{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 17px;
+    left: -50px;
+    font-size: 25px;
+    color: #888;
+}
+.contenedor-acceso .formulario-contenido .icon-mostrar-ocultar{
+    position: relative;
+    left: -10px;
+    top: 0;
+    color: #888;
+}
+.contenedor-acceso .formulario-contenido input{
+    color: #000;
+    width: 95%;
+} 
+
+/* BOTON */
+.formulario-contenido button{
+    position: relative;
+    left: 25px;
+    display: inline-block;
+    padding: 8px 20px;
+    background: linear-gradient(bottom, #4889C2 0%, #5BA7E9 100%);
+    background: -webkit-linear-gradient(bottom, #4889C2 0%, #5BA7E9 100%);
+    background: -moz-linear-gradient(bottom, #4889C2 0%, #5BA7E9 100%);
+    background: -o-linear-gradient(bottom, #4889C2 0%, #5BA7E9 100%);
+    border: 1px solid #336895;
+    box-shadow: inset 0 1px 0 ;
+    border-radius: 3%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    width: 260px;
+    height: 40px
+}
+.formulario-contenido button:hover{
+    background: linear-gradient(15deg, #5BA7E9, #4889C2);
+    cursor: pointer;
+}

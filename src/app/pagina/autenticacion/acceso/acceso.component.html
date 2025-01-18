@@ -1,1 +1,47 @@
-<p>acceso works!</p>
+<!-- ------------------------------- -->
+<!--    CONTENIDO FORM ACCESO        -->
+<!-- ------------------------------- -->
+
+
+<div class="contenedor-acceso">
+    <!-- FORMULARIO -->
+    <div class="formulario-contenido">
+        <h1>Iniciar Sesion</h1>
+        <!-- ACCION A ENVIAR FORM -->
+        <form>
+
+            <!-- CAMPO CORREO -->
+            <div>
+                <mat-form-field class="grupo-formulario" appearance="outline">
+                <mat-icon class="icon-form"> mail_outline</mat-icon>
+                <mat-label>Correo</mat-label>
+                <input type="email" matInput />
+                </mat-form-field>
+            </div>
+
+            
+            <!-- CAMPO CONTRASEÑA -->
+            <div>
+                <mat-form-field class="grupo-formulario" appearance="outline">
+                    <mat-icon class="icon-form"> vpn_key</mat-icon>
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput />
+                    <a mat-icon-button matSuffix>
+                        <mat-icon class="icon-mostrar-ocultar">visibility_off</mat-icon>
+                    </a>
+                </mat-form-field>
+            </div>
+
+            
+            <!-- BOTON PARA ENVIAR FORMULARIO -->
+            <div>
+                <button mat-flat-button color="accent" type="submit">Acceder</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+    
