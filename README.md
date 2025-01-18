@@ -43,3 +43,5 @@
 `ng new Sistemas-Inventario` (Se crea con CSS)<br>
 `ng generate component pagina/autenticacion/acceso` (Acceso)<br>
 `ng generate service arquitectura/servicio/autenticador` (Servicio para Autenticacion - Acceso)
+`ng generate component pagina/inicio` (Inicio)
+`ng generate guard arquitectura/guardia/enrutamiento` (*)CanActivate (Guardian para Controlar Roles de Acceso)<br>
