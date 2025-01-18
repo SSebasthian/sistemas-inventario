@@ -75,7 +75,7 @@ export class AccesoComponent {
     try {
       await this.AutenticadorService.accesoCorreoContrasena(credencial);
         alert("Inicio de Sesion Exitoso");
-        this.router.navigateByUrl('/Inicio')
+        this.router.navigateByUrl('/inicio')
       } catch (error: any) {
       // Firebase no distingue entre "correo no encontrado" y "contraseña incorrecta", por lo tanto, mostramos un mensaje genérico
       if (error.code === 'auth/invalid-credential') {
