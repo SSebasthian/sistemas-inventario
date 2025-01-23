@@ -66,13 +66,14 @@
             </a>
         </li>
           <li>
-              <a [routerLink]="['#']" routerLinkActive="activa">
+              <a [routerLink]="['#']" (click)="cerrarSesion()">
                   <span class="icon">
                     <mat-icon>exit_to_app</mat-icon>
                   </span>
-                  <span class="title" routerLinkActive="activa">Cerrar Sesion</span>
+                  <span class="title">Cerrar Sesion</span>
               </a>
           </li>
       </ul>
   </div>
 </div>
+
