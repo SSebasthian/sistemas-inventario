@@ -26,8 +26,25 @@
   z-index: 1;
 }
 
-
+.boton-menu{
+  position: absolute;
+  left: 250px;
+  top: 25px;
+  z-index: 3;
+  padding: 5px;
+  background: #5BA7E9;
+  color: #fff;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  transition: 0.3s;
+  cursor: pointer;
+}
 .menu-minimizado .boton-menu{
   left: 80px;
 }
 
+.boton-menu mat-icon{
+  font-size: 35px;
+  width: 35px;
+  height: 30px;
+}
