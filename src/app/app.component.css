@@ -1,0 +1,33 @@
+.contenido-inventario-sistemas {
+  display: grid;
+  grid-template-columns: var(--menu-width, 250px) 1fr;
+  grid-template-rows: auto;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  transition: grid-template-columns 0.3s ease;
+}
+
+.menu {
+  background-color: #f4f4f4;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.menu-minimizado {
+  --menu-width: 80px;
+}
+
+.pagina-dinamica {
+  grid-column: 2 / span 1;
+  background-color: #fff;
+  z-index: 1;
+}
+
+
+.menu-minimizado .boton-menu{
+  left: 80px;
+}
+

@@ -1,3 +1,11 @@
-<app-menu />
-
-<router-outlet />
+<div class="contenido-inventario-sistemas" [class.menu-minimizado]="menuMinimizado">
+    <div class="menu">
+      <a (click)="menuMinMax()" class="boton-menu">
+        <mat-icon>menu</mat-icon>
+      </a>
+      <app-menu></app-menu>
+    </div>
+    <div class="pagina-dinamica">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
