@@ -42,7 +42,8 @@
 ## Creación de Proyecto Angular
 `ng new Sistemas-Inventario` (Se crea con CSS)<br>
 `ng generate component pagina/autenticacion/acceso` (Acceso)<br>
-`ng generate service arquitectura/servicio/autenticador` (Servicio para Autenticacion - Acceso)
-`ng generate component pagina/inicio` (Inicio)
+`ng generate service arquitectura/servicio/autenticador` (Servicio para Autenticacion - Acceso)<br>
+`ng generate component pagina/inicio` (Inicio)<br>
 `ng generate guard arquitectura/guardia/enrutamiento` (*)CanActivate (Guardian para Controlar Roles de Acceso)<br>
-`ng generate component pagina/menu` (Menu)
+`ng generate component pagina/menu` (Menu)<br>
+`ng generate component pagina/registro/opciones` (opciones de registro)<br>
