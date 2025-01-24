@@ -2,7 +2,7 @@
     <div class="contenedor">
         <div class="carta">
             <div class="contenedor-caja">
-                <div class="contenido">
+                <div class="contenido" (click)="mostrarComponenteRegistroUsuario()">
                     <mat-icon>perm_identity</mat-icon>
                     <h3>Usuario</h3>
                 </div>
@@ -40,5 +40,9 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div *ngIf="componenteActivo === 'usuario'">
+        <app-reg-usuario></app-reg-usuario> <!-- Llamamos a RegUsuarioComponent -->
     </div>
 </div>

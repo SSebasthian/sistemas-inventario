@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { AccesoComponent } from './pagina/autenticacion/acceso/acceso.component';
 import { InicioComponent } from './pagina/inicio/inicio.component';
 import { OpcionesComponent } from './pagina/registro/opciones/opciones.component';
+import { RegUsuarioComponent } from './pagina/registro/reg-usuario/reg-usuario.component';
+
 
 import { estadoPrivado, estadoPublico } from './arquitectura/guardia/enrutamiento.guard';
 
@@ -26,8 +28,12 @@ export const routes: Routes = [
     {path: 'registro',
         children:[
             {path: 'opciones',
-            component: OpcionesComponent,
-            canActivate: [estadoPrivado],
+                component: OpcionesComponent,
+                canActivate: [estadoPrivado],
+            },
+            {path: 'opciones',
+                component: RegUsuarioComponent,
+                canActivate: [estadoPrivado],
             },
         ],
     },
