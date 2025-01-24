@@ -1,0 +1,78 @@
+.contendido-servicios{
+    width: 95%;
+    position: relative;
+    margin: auto;
+}
+
+
+.contenedor{
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.contenedor .carta{
+    position: relative;
+    width: 130px;
+    height: 90px;
+    background: rgba(255,255,255,.1);
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    border-radius: 10px;
+    margin: 35px 20px 5px; 
+    cursor: pointer;
+}
+
+.contenedor .carta .contenedor-caja{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.041);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.contenedor .carta .contenedor-caja .contenido{
+    padding: 20px;
+    text-align: center;
+}
+
+.contenedor .carta .contenedor-caja .contenido mat-icon{
+    position: absolute;
+    top: -25px;
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+    color: rgba(0, 0, 0, 0.2);
+    transform: 0.5s;
+}
+
+.contenedor .carta:hover .contenedor-caja .contenido mat-icon{
+    color: rgba(64, 162, 243, 0.623);
+    z-index: -1;
+    transform: translateY(-15px);
+}
+
+.contenedor .carta .contenedor-caja .contenido h3{
+    font-size: 1.7em;
+    margin-top: 17px;
+    color: #777;
+    z-index: 1;
+    font-weight: 400;
+    transition: 0.2s;
+}
+
+.contenedor .carta:hover .contenedor-caja .contenido h3{
+    color: rgba(64, 162, 243, 0.623);
+    transform: translateY(5px);
+    transition: 0.2s;
+}
