@@ -48,3 +48,4 @@
 `ng generate component pagina/menu` (Menu)<br>
 `ng generate component pagina/registro/opciones` (opciones de registro)<br>
 `ng generate component pagina/registro/reg-usuario` (opciones de registro Usuario)<br>
+`ng generate component pagina/registro/reg-equipo` (opciones de registro Equipo)<br>
