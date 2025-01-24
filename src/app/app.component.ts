@@ -6,6 +6,8 @@ import { AutenticadorService } from './arquitectura/servicio/autenticador.servic
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+
 
 
 @Component({
@@ -15,7 +17,8 @@ import { CommonModule } from '@angular/common';
     RouterOutlet,
     MenuComponent,
     MatIconModule,
-    CommonModule
+    CommonModule,
+    RouterLink
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
