@@ -49,3 +49,4 @@
 `ng generate component pagina/registro/opciones` (opciones de registro)<br>
 `ng generate component pagina/registro/reg-usuario` (opciones de registro Usuario)<br>
 `ng generate component pagina/registro/reg-equipo` (opciones de registro Equipo)<br>
+`ng generate component pagina/registro/reg-telefono` (opciones de registro Telefono)<br>
