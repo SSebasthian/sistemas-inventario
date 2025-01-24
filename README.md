@@ -47,3 +47,4 @@
 `ng generate guard arquitectura/guardia/enrutamiento` (*)CanActivate (Guardian para Controlar Roles de Acceso)<br>
 `ng generate component pagina/menu` (Menu)<br>
 `ng generate component pagina/registro/opciones` (opciones de registro)<br>
+`ng generate component pagina/registro/reg-usuario` (opciones de registro Usuario)<br>
