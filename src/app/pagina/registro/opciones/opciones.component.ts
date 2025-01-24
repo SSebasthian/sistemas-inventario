@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RegUsuarioComponent } from '../reg-usuario/reg-usuario.component';
+import { RegEquipoComponent } from '../reg-equipo/reg-equipo.component';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { RegUsuarioComponent } from '../reg-usuario/reg-usuario.component';
     MatIconModule,
     CommonModule,
     RegUsuarioComponent,
+    RegEquipoComponent,
   ],
   templateUrl: './opciones.component.html',
   styleUrl: './opciones.component.css'
@@ -22,6 +24,11 @@ export class OpcionesComponent {
  // Método para alternar la visibilidad del componente de registro
  mostrarComponenteRegistroUsuario() {
   this.componenteActivo = this.componenteActivo === 'usuario' ? '' : 'usuario';
+ }
+
+ // Método para alternar la visibilidad del componente de registro
+ mostrarComponenteRegistroEquipo() {
+  this.componenteActivo = this.componenteActivo === 'equipo' ? '' : 'equipo';
  }
 
 }

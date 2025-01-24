@@ -10,7 +10,7 @@
         </div>
         <div class="carta">
             <div class="contenedor-caja">
-                <div class="contenido">
+                <div class="contenido" (click)="mostrarComponenteRegistroEquipo()">
                     <mat-icon>desktop_mac</mat-icon>
                     <h3>Equipo</h3>
                 </div>
@@ -44,5 +44,9 @@
 
     <div *ngIf="componenteActivo === 'usuario'">
         <app-reg-usuario></app-reg-usuario> <!-- Llamamos a RegUsuarioComponent -->
+    </div>
+
+    <div *ngIf="componenteActivo === 'equipo'">
+        <app-reg-equipo></app-reg-equipo> <!-- Llamamos a RegUsuarioComponent -->
     </div>
 </div>
