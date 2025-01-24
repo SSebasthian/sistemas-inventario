@@ -6,8 +6,8 @@ import { RegUsuarioComponent } from './pagina/registro/reg-usuario/reg-usuario.c
 import { RegEquipoComponent } from './pagina/registro/reg-equipo/reg-equipo.component';
 import { RegTelefonoComponent } from './pagina/registro/reg-telefono/reg-telefono.component';
 
-
 import { estadoPrivado, estadoPublico } from './arquitectura/guardia/enrutamiento.guard';
+import { RegTabletComponent } from './pagina/registro/reg-tablet/reg-tablet.component';
 
 
 export const routes: Routes = [
@@ -43,6 +43,10 @@ export const routes: Routes = [
             },
             {path: 'opciones',
                 component: RegTelefonoComponent,
+                canActivate: [estadoPrivado],
+            },
+            {path: 'opciones',
+                component: RegTabletComponent,
                 canActivate: [estadoPrivado],
             },
         ],

@@ -26,7 +26,7 @@
         </div>
         <div class="carta">
             <div class="contenedor-caja">
-                <div class="contenido">
+                <div class="contenido" (click)="mostrarComponenteRegistroTablet()">
                     <mat-icon>tablet_mac</mat-icon>
                     <h3>Tablet</h3>
                 </div>
@@ -54,5 +54,8 @@
         <app-reg-telefono></app-reg-telefono> <!-- Llamamos a RegUsuarioComponent -->
     </div>
 
+    <div *ngIf="componenteActivo === 'tablet'">
+        <app-reg-tablet></app-reg-tablet> <!-- Llamamos a RegUsuarioComponent -->
+    </div>
 
 </div>
