@@ -5,9 +5,11 @@ import { OpcionesComponent } from './pagina/registro/opciones/opciones.component
 import { RegUsuarioComponent } from './pagina/registro/reg-usuario/reg-usuario.component';
 import { RegEquipoComponent } from './pagina/registro/reg-equipo/reg-equipo.component';
 import { RegTelefonoComponent } from './pagina/registro/reg-telefono/reg-telefono.component';
+import { RegTabletComponent } from './pagina/registro/reg-tablet/reg-tablet.component';
+import { RegImpresoraComponent } from './pagina/registro/reg-impresora/reg-impresora.component';
 
 import { estadoPrivado, estadoPublico } from './arquitectura/guardia/enrutamiento.guard';
-import { RegTabletComponent } from './pagina/registro/reg-tablet/reg-tablet.component';
+
 
 
 export const routes: Routes = [
@@ -31,24 +33,23 @@ export const routes: Routes = [
         children:[
             {path: 'opciones',
                 component: OpcionesComponent,
-                canActivate: [estadoPrivado],
             },
             {path: 'opciones',
                 component: RegUsuarioComponent,
-                canActivate: [estadoPrivado],
             },
             {path: 'opciones',
                 component: RegEquipoComponent,
-                canActivate: [estadoPrivado],
             },
             {path: 'opciones',
                 component: RegTelefonoComponent,
-                canActivate: [estadoPrivado],
             },
             {path: 'opciones',
                 component: RegTabletComponent,
-                canActivate: [estadoPrivado],
+            },
+            {path: 'opciones',
+                component: RegImpresoraComponent,
             },
         ],
+       canActivate: [estadoPrivado],
     },
 ];

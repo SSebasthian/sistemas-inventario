@@ -34,7 +34,7 @@
         </div>
         <div class="carta">
             <div class="contenedor-caja">
-                <div class="contenido">
+                <div class="contenido" (click)="mostrarComponenteRegistroImpresora()">
                     <mat-icon>print</mat-icon>
                     <h3>Impresora</h3>
                 </div>
@@ -56,6 +56,10 @@
 
     <div *ngIf="componenteActivo === 'tablet'">
         <app-reg-tablet></app-reg-tablet> <!-- Llamamos a RegUsuarioComponent -->
+    </div>
+
+    <div *ngIf="componenteActivo === 'impresora'">
+        <app-reg-impresora></app-reg-impresora> <!-- Llamamos a RegUsuarioComponent -->
     </div>
 
 </div>

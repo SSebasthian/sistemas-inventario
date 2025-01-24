@@ -5,6 +5,7 @@ import { RegUsuarioComponent } from '../reg-usuario/reg-usuario.component';
 import { RegEquipoComponent } from '../reg-equipo/reg-equipo.component';
 import { RegTelefonoComponent } from '../reg-telefono/reg-telefono.component';
 import { RegTabletComponent } from '../reg-tablet/reg-tablet.component';
+import { RegImpresoraComponent } from '../reg-impresora/reg-impresora.component';
 
 
 @Component({
@@ -16,7 +17,8 @@ import { RegTabletComponent } from '../reg-tablet/reg-tablet.component';
     RegUsuarioComponent,
     RegEquipoComponent,
     RegTelefonoComponent,
-    RegTabletComponent
+    RegTabletComponent,
+    RegImpresoraComponent
   ],
   templateUrl: './opciones.component.html',
   styleUrl: './opciones.component.css'
@@ -43,6 +45,11 @@ export class OpcionesComponent {
  // Método para alternar la visibilidad del componente de registro
  mostrarComponenteRegistroTablet() {
   this.componenteActivo = this.componenteActivo === 'tablet' ? '' : 'tablet';
+ }
+
+ // Método para alternar la visibilidad del componente de registro
+ mostrarComponenteRegistroImpresora() {
+  this.componenteActivo = this.componenteActivo === 'impresora' ? '' : 'impresora';
  }
 
 }
