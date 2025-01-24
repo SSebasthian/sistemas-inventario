@@ -18,7 +18,7 @@
         </div>
         <div class="carta">
             <div class="contenedor-caja">
-                <div class="contenido">
+                <div class="contenido" (click)="mostrarComponenteRegistroTelefono()">
                     <mat-icon>phone_android</mat-icon>
                     <h3>Telefono</h3>
                 </div>
@@ -49,4 +49,10 @@
     <div *ngIf="componenteActivo === 'equipo'">
         <app-reg-equipo></app-reg-equipo> <!-- Llamamos a RegUsuarioComponent -->
     </div>
+
+    <div *ngIf="componenteActivo === 'telefono'">
+        <app-reg-telefono></app-reg-telefono> <!-- Llamamos a RegUsuarioComponent -->
+    </div>
+
+
 </div>

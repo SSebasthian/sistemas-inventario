@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RegUsuarioComponent } from '../reg-usuario/reg-usuario.component';
 import { RegEquipoComponent } from '../reg-equipo/reg-equipo.component';
+import { RegTelefonoComponent } from '../reg-telefono/reg-telefono.component';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { RegEquipoComponent } from '../reg-equipo/reg-equipo.component';
     CommonModule,
     RegUsuarioComponent,
     RegEquipoComponent,
+    RegTelefonoComponent
   ],
   templateUrl: './opciones.component.html',
   styleUrl: './opciones.component.css'
@@ -26,9 +28,14 @@ export class OpcionesComponent {
   this.componenteActivo = this.componenteActivo === 'usuario' ? '' : 'usuario';
  }
 
- // Método para alternar la visibilidad del componente de registro
+ // Método para alternar la visibilidad del componente de registro 
  mostrarComponenteRegistroEquipo() {
   this.componenteActivo = this.componenteActivo === 'equipo' ? '' : 'equipo';
+ }
+
+ // Método para alternar la visibilidad del componente de registro
+ mostrarComponenteRegistroTelefono() {
+  this.componenteActivo = this.componenteActivo === 'telefono' ? '' : 'telefono';
  }
 
 }
