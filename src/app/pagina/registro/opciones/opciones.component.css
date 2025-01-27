@@ -76,3 +76,18 @@
     transform: translateY(5px);
     transition: 0.2s;
 }
+
+
+/* Añadir estilo para la carta seleccionada */
+.contenedor .carta.selected .contenedor-caja .contenido mat-icon{
+    color: rgba(64, 162, 243, 0.623);
+    z-index: -1;
+    transform: translateY(-15px);
+}
+
+.contenedor .carta.selected .contenedor-caja .contenido h3{
+    color: rgba(64, 162, 243, 0.623);
+    transform: translateY(5px);
+    transition: 0.2s;
+}
+
