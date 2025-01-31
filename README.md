@@ -52,3 +52,4 @@
 `ng generate component pagina/registro/reg-telefono` (opciones de registro Telefono)<br>
 `ng generate component pagina/registro/reg-tablet` (opciones de registro Telefono)<br>
 `ng generate component pagina/registro/reg-impresora` (opciones de registro Impresora)<br>
+`arquitectura/interface/usuario` (Se Crea Carpeta Interface y Archivo Usuario - Manualmente)<br>
