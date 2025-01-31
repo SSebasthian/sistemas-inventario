@@ -6,6 +6,7 @@ import { RegEquipoComponent } from '../reg-equipo/reg-equipo.component';
 import { RegTelefonoComponent } from '../reg-telefono/reg-telefono.component';
 import { RegTabletComponent } from '../reg-tablet/reg-tablet.component';
 import { RegImpresoraComponent } from '../reg-impresora/reg-impresora.component';
+import { Location } from '@angular/common'; // Importar Location
 
 
 @Component({
@@ -27,29 +28,61 @@ export class OpcionesComponent {
 
   componenteActivo: string = ''; // Puede ser 'usuario', 'equipo', o vacío
 
+  constructor(private location: Location) {}
+
+
  // Método para alternar la visibilidad del componente de registro
  mostrarComponenteRegistroUsuario() {
-  this.componenteActivo = this.componenteActivo === 'usuario' ? '' : 'usuario';
- }
+  if (this.componenteActivo === 'usuario') {
+    this.componenteActivo = '';  // Desactiva el componente
+    this.location.replaceState('/registro/opciones'); // Vuelve a la ruta base
+  } else {
+    this.componenteActivo = 'usuario';  // Activa el componente
+    this.location.replaceState('/registro/opciones/usuario'); // Cambia la URL
+  }
+}
 
  // Método para alternar la visibilidad del componente de registro 
  mostrarComponenteRegistroEquipo() {
-  this.componenteActivo = this.componenteActivo === 'equipo' ? '' : 'equipo';
- }
+    if (this.componenteActivo === 'equipo') {
+      this.componenteActivo = '';  // Desactiva el componente
+      this.location.replaceState('/registro/opciones'); // Vuelve a la ruta base
+    } else {
+      this.componenteActivo = 'equipo';  // Activa el componente
+      this.location.replaceState('/registro/opciones/equipo'); // Cambia la URL
+    }
+  }
 
  // Método para alternar la visibilidad del componente de registro
- mostrarComponenteRegistroTelefono() {
-  this.componenteActivo = this.componenteActivo === 'telefono' ? '' : 'telefono';
- }
+  mostrarComponenteRegistroTelefono() {
+    if (this.componenteActivo === 'telefono') {
+        this.componenteActivo = '';  // Desactiva el componente
+        this.location.replaceState('/registro/opciones'); // Vuelve a la ruta base
+    } else {
+      this.componenteActivo = 'telefono';  // Activa el componente
+      this.location.replaceState('/registro/opciones/telefono'); // Cambia la URL
+    }
+  }
 
  // Método para alternar la visibilidad del componente de registro
- mostrarComponenteRegistroTablet() {
-  this.componenteActivo = this.componenteActivo === 'tablet' ? '' : 'tablet';
- }
+  mostrarComponenteRegistroTablet() {
+    if (this.componenteActivo === 'tablet') {
+      this.componenteActivo = '';  // Desactiva el componente
+      this.location.replaceState('/registro/opciones'); // Vuelve a la ruta base
+    } else {
+      this.componenteActivo = 'tablet';  // Activa el componente
+      this.location.replaceState('/registro/opciones/tablet'); // Cambia la URL
+    }
+  }
 
  // Método para alternar la visibilidad del componente de registro
- mostrarComponenteRegistroImpresora() {
-  this.componenteActivo = this.componenteActivo === 'impresora' ? '' : 'impresora';
- }
-
+  mostrarComponenteRegistroImpresora() {
+    if (this.componenteActivo === 'impresora') {
+      this.componenteActivo = '';  // Desactiva el componente
+      this.location.replaceState('/registro/opciones'); // Vuelve a la ruta base
+    } else {
+      this.componenteActivo = 'impresora';  // Activa el componente
+      this.location.replaceState('/registro/opciones/impresora'); // Cambia la URL
+    }
+  }
 }
