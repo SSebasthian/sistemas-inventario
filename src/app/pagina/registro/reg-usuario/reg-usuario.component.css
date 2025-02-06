@@ -232,19 +232,22 @@
     bottom: 10px;
 }
   
-.contenedor-regUsuario .contenido  #checkboxInput {
+/* Ocultar el input submit */
+.contenedor-regUsuario .contenido #submitInput {
     display: none;
 }
   
-.contenedor-regUsuario .contenido  .bookmark mat-icon {
+/* Estilo del ícono */
+.contenedor-regUsuario .contenido .bookmark mat-icon {
     height: 70px;
     width: 70px;
     font-size: 70px;
     color: rgb(153, 153, 153);
 }
-   
+  
+/* Estilo para el icono antes de que se haga clic */
 .contenedor-regUsuario .contenido .bookmark::before {
-    content: "\e161";
+    content: "\e161"; /* Ícono inicial */
     font-family: 'Material Icons';
     position: absolute;
     color: rgb(255, 255, 255);
@@ -252,23 +255,20 @@
     top: 20px;
 }
   
-.contenedor-regUsuario .contenido #checkboxInput:checked + .bookmark::before {
-    content: "\e5ca";
+/* Estilo al hacer clic en el botón (simula un cambio de ícono) */
+.contenedor-regUsuario .contenido #submitInput:active + .bookmark::before {
+    content: "\e5ca"; /* Cambiar el ícono al hacer clic */
     font-family: 'Material Icons';
     font-size: 1.6em;
     top: 20px;
 }
   
-.contenedor-regUsuario .contenido #checkboxInput:checked + .bookmark mat-icon {
-    Color: #5ba7e9e3;
-
-}
- 
-.contenedor-regUsuario .contenido #checkboxInput:active + .bookmark mat-icon {
-    color: rgb(204, 204, 204);
-
+/* Cambio de color al hacer clic en el ícono */
+.contenedor-regUsuario .contenido #submitInput:active + .bookmark mat-icon {
+    color: #5ba7e9e3;
 }
 
+/* Estilo cuando se presiona el botón */
 .contenedor-regUsuario .contenido .bookmark:active {
     transform: translateY(4px); /* Efecto de "presionar" */
 }
