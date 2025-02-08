@@ -20,6 +20,7 @@ import { RegistroOpcionesService } from '../../../arquitectura/servicio/registro
 })
 export class RegUsuarioComponent {
   formularioUsuario: FormGroup;
+  mostrarOcultarClave = true;
 
 
   constructor(private registroOpcionesService: RegistroOpcionesService){

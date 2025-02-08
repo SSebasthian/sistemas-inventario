@@ -9,7 +9,7 @@
           <label>CEDULA:</label>
           <input class="opcionForm" type="number" min="0"  formControlName="cedula">
           <div *ngIf="validacionFormRegUsuario('cedula')">
-            <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
           </div>
         </div>  
 
@@ -17,7 +17,7 @@
           <label>APELLIDO:</label>
           <input class="opcionForm" type="text" formControlName="apellido">
           <div *ngIf="validacionFormRegUsuario('apellido')">
-            <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
           </div>
         </div>
 
@@ -25,7 +25,7 @@
           <label>NOMBRE:</label>
           <input class="opcionForm" type="text" formControlName="nombre">
           <div *ngIf="validacionFormRegUsuario('nombre')">
-            <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
           </div>
         </div>
 
@@ -59,7 +59,7 @@
               <option value="VENTAS">VENTAS</option>
           </select>
           <div *ngIf="validacionFormRegUsuario('area')">
-            <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
           </div>
         </div>
 
@@ -67,7 +67,7 @@
           <label>CARGO</label>
           <input class="opcionForm" type="text" formControlName="cargo">
           <div *ngIf="validacionFormRegUsuario('cargo')">
-            <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
           </div>
         </div>
 
@@ -79,7 +79,7 @@
             <option value="NO">NO</option>
           </select>
           <div *ngIf="validacionFormRegUsuario('infCritica')">
-            <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
           </div>
         </div>
    
@@ -88,15 +88,18 @@
         <label>CORREO CORPORATIVO</label>
         <input class="opcionForm" type="text" formControlName="correo">
         <div *ngIf="validacionFormRegUsuario('correo')">
-          <mat-icon  matTooltip="Formato de correo inválido" matTooltipPosition="above">error</mat-icon>
+          <mat-icon class="icono-validacion" matTooltip="Formato de correo inválido" matTooltipPosition="above">error</mat-icon>
         </div>
       </div>
 
       <div class="contenido-opcion">
         <label>CONTRASEÑA CORREO</label>
-        <input class="opcionForm" type="text" formControlName="claveCorreo">
+        <input class="opcionForm-contra" type="text" formControlName="claveCorreo" [type]="mostrarOcultarClave ? 'password' : 'text'">
+          <a (click)="mostrarOcultarClave = !mostrarOcultarClave">
+              <mat-icon class="icon-mostrar-ocultar">{{ mostrarOcultarClave ? "visibility" : "visibility_off" }}</mat-icon>
+          </a>
         <div *ngIf="validacionFormRegUsuario('claveCorreo')">
-          <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
         </div>
       </div>
 
@@ -104,7 +107,7 @@
         <label>EXT. TEL.</label>
         <input class="opcionForm" type="number" min="0" formControlName="extenciontel">
         <div *ngIf="validacionFormRegUsuario('extenciontel')">
-          <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
         </div>
       </div>
 
@@ -118,7 +121,7 @@
           <label>FECHA DE INGRESO</label>
           <input class="opcionForm" type="date" formControlName="fechaIngreso">
           <div *ngIf="validacionFormRegUsuario('fechaIngreso')">
-            <mat-icon class="icono-fecha-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+            <mat-icon class="icono-fecha-validacion" matTooltip="Ingresa una fecha valida" matTooltipPosition="above">error</mat-icon>
           </div>
         </div>
 
