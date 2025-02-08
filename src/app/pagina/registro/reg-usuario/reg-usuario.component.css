@@ -39,11 +39,23 @@
     top: 30px;
 }
 
-.contenedor-regUsuario .contenido p {
+.contenedor-regUsuario .contenido .contenido-opcion {
     margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+}
+
+.contenedor-regUsuario .contenido .contenido-opcion mat-icon{
+    color: rgb(204, 31, 31);
+    font-size: 24px;
+    position: absolute;
+    right: 25px;
+    top: -3px;
+}
+.contenedor-regUsuario .contenido .contenido-opcion .icono-fecha-validacion{
+    right: -20px;
 }
 
 .contenedor-regUsuario .contenido label {

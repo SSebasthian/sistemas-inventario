@@ -4,19 +4,32 @@
 
       <!-- Nueva fila con 3 columnas -->
       <div class="fila-de-tres">
-        <p>
+
+        <div class="contenido-opcion">
           <label>CEDULA:</label>
           <input class="opcionForm" type="number" min="0"  formControlName="cedula">
-        </p>  
-        <p>
+          <div *ngIf="validacionFormRegUsuario('cedula')">
+            <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
+        </div>  
+
+        <div class="contenido-opcion">
           <label>APELLIDO:</label>
           <input class="opcionForm" type="text" formControlName="apellido">
-        </p>
-        <p>
+          <div *ngIf="validacionFormRegUsuario('apellido')">
+            <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
+        </div>
+
+        <div class="contenido-opcion">
           <label>NOMBRE:</label>
           <input class="opcionForm" type="text" formControlName="nombre">
-        </p>
-        <p>
+          <div *ngIf="validacionFormRegUsuario('nombre')">
+            <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
+        </div>
+
+        <div class="contenido-opcion">
           <label>AREA</label>
           <select class="opcionForm select" formControlName="area">
               <option value=""></option>
@@ -45,48 +58,75 @@
               <option value="SG-SST">SG-SST</option>
               <option value="VENTAS">VENTAS</option>
           </select>
-        </p>
-        <p>
+          <div *ngIf="validacionFormRegUsuario('area')">
+            <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
+        </div>
+
+        <div class="contenido-opcion">
           <label>CARGO</label>
           <input class="opcionForm" type="text" formControlName="cargo">
-        </p>
-        <p>
+          <div *ngIf="validacionFormRegUsuario('cargo')">
+            <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
+        </div>
+
+        <div class="contenido-opcion">
           <label>INFORMACION CRITICA</label>
           <select class="opcionForm select" formControlName="infCritica">
             <option value=""></option>
             <option value="SI">SI</option>
             <option value="NO">NO</option>
           </select>
-        </p>
+          <div *ngIf="validacionFormRegUsuario('infCritica')">
+            <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
+        </div>
    
       
-      <p>
+      <div class="contenido-opcion">
         <label>CORREO CORPORATIVO</label>
         <input class="opcionForm" type="text" formControlName="correo">
-      </p>
-      <p>
+        <div *ngIf="validacionFormRegUsuario('correo')">
+          <mat-icon  matTooltip="Formato de correo inválido" matTooltipPosition="above">error</mat-icon>
+        </div>
+      </div>
+
+      <div class="contenido-opcion">
         <label>CONTRASEÑA CORREO</label>
         <input class="opcionForm" type="text" formControlName="claveCorreo">
-      </p>
-      <p>
+        <div *ngIf="validacionFormRegUsuario('claveCorreo')">
+          <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+        </div>
+      </div>
+
+      <div class="contenido-opcion">
         <label>EXT. TEL.</label>
         <input class="opcionForm" type="number" min="0" formControlName="extenciontel">
-      </p>
+        <div *ngIf="validacionFormRegUsuario('extenciontel')">
+          <mat-icon  matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+        </div>
       </div>
+
+    </div>
 
 
       <!-- Nueva fila con 2 columnas -->
       <div class="fila-de-dos">
         
-        <p>
+        <div class="contenido-opcion">
           <label>FECHA DE INGRESO</label>
           <input class="opcionForm" type="date" formControlName="fechaIngreso">
-        </p>
-        <p class="checkbox-wrapper-10">
+          <div *ngIf="validacionFormRegUsuario('fechaIngreso')">
+            <mat-icon class="icono-fecha-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
+        </div>
+
+        <div class="checkbox-wrapper-10">
           <label>ESTADO</label>
           <input type="checkbox" id="cb5" class="tgl tgl-flip" checked disabled>
           <label for="cb5" data-tg-on="ACTIVO" data-tg-off="INACTIVO" class="tgl-btn"></label>
-        </p> 
+        </div> 
       </div>
 
       <div>
