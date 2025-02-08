@@ -23,16 +23,20 @@
 .contenedor-regUsuario .contenido .fila-de-tres{
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr;  
-    gap: 40px;  
-    width: 100%;
+    gap: 30px;  
+    width: 90%;
+    margin: auto;
 }
 
 .contenedor-regUsuario .contenido .fila-de-dos {
     display: grid;
     grid-template-columns: 1fr 1fr;  
     gap: 80px;
-    margin-top: 30px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    top: 30px;
 }
 
 .contenedor-regUsuario .contenido p {
@@ -50,7 +54,7 @@
 }
 
 .contenedor-regUsuario .contenido .opcionForm {
-    width: 100%;
+    width: 80%;
     padding: 0.7em;
     border: 1px solid #ddd;
     background-color: #f5f5f5;
@@ -61,7 +65,7 @@
     text-transform: uppercase; 
 }
 .contenedor-regUsuario .contenido .select{
-    width: 112%;
+    width: 90%;
 }
 
 .contenedor-regUsuario .contenido .opcionForm:focus {
@@ -228,7 +232,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    right: 0px;
+    right: 90px;
     bottom: 10px;
 }
   

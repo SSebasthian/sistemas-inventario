@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, doc, getDoc, setDoc} from '@angular/fire/firestore';
+import { Firestore, doc, getDoc, setDoc} from '@angular/fire/firestore';
 import Usuario from '../interface/usuario.interface';
 
 
@@ -27,9 +27,6 @@ export class RegistroOpcionesService {
     }
   }
 
-  nuevaArea(usuario: Usuario){
-    //se guarda coleccion del formulario en base de datos
-    const areaReferencia = collection(this.firestore, 'area');
-    return addDoc(areaReferencia, usuario);
-  }
+
+  
 }
