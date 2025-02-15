@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @Component({
   selector: 'app-reg-equipo',
   standalone: true,
-  imports: [],
+  imports: [
+    MatIconModule,
+  ],
   templateUrl: './reg-equipo.component.html',
   styleUrl: './reg-equipo.component.css'
 })
