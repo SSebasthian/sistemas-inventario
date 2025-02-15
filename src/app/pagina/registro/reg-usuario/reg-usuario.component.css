@@ -227,6 +227,7 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 4px;
+    margin-top: 7px;
 }
   
 .contenedor-regUsuario .contenido .checkbox-wrapper-10 .tgl-flip + .tgl-btn:after {
