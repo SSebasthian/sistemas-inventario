@@ -1,27 +1,33 @@
 <div class="contenedor-regEquipo">
-  <form id="form-registro-equipo">
+  <form id="form-registro-equipo"> 
     <div class="contenido">
   
       <div class="fila-de-tres">
         <div class="contenedor-imagen">
           <div class="contenido-img">
             <mat-icon class="icono-img-prod">image</mat-icon>
-              <input type="file" id="archivo-producto">
+              <input type="file" id="archivo-producto" disabled>
               <div>
-                <img alt="Imagen">
+                <img  alt="Imagen" />
               </div>
           </div>
         </div>
-                  
+
+
+
+        <!-----------------------  ----------------------->
+        <!------------ OPCIONES DE EQUIPOS --------------->
+        <!-----------------------  ----------------------->
+                
+      
         <div class="contenido-opcion">
             <label>TIPO DE EQUIPO</label>
-            <select class="opcionForm select">
+            <select class="opcionForm select" [(ngModel)]="seleccionTipoEquipo" [ngModelOptions]="{standalone: true}">
                 <option value=""></option>
-                <option value="TORRE">TORRE</option>
-                <option value="TODO EN UNO">TODO EN UNO</option>
-                <option value="PORTATIL">PORTATIL</option>
-                <option value="SERVIDOR">SERVIDOR</option>
-                <option value="TERMINAL">TERMINAL</option>
+                <option value="Torre (Desktop)">Torre (Desktop)</option>
+                <option value="Portatil (Laptop)">Portatil (Laptop)</option>
+                <option value="Todo en Uno (All-in-One)">Todo en Uno (All-in-One)</option>
+                <option value="Servidor (Server)">Servidor (Server)</option>
             </select>
         </div>
 
@@ -30,26 +36,108 @@
             <input class="opcionForm" type="text">
         </div>  
 
+
+        <!-----------------------  ----------------------->
+        <!-- OPCIONES DE MARCAS SEGUN EL TIPO DE EQUIPO -->
+        <!-----------------------  ----------------------->
+
+
         <div class="contenido-opcion">
           <label>MARCA</label>
-          <select class="opcionForm select">
+
+           <select class="opcionForm select" [(ngModel)]="seleccionMarca" [ngModelOptions]="{standalone: true}"> 
               <option value=""></option>
-              <option value="ASUS">ASUS</option>
-              <option value="DELL INC">DELL INC</option>
-              <option value="HEWLETT PACKARD">HEWLETT PACKARD</option>
-              <option value="LENOVO">LENOVO</option>
+              <option *ngIf="
+                  seleccionTipoEquipo === 'Portatil (Laptop)' || 
+                  seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" 
+                  value="ASUS">ASUS
+              </option>
+              <option *ngIf="
+                  seleccionTipoEquipo === 'Torre (Desktop)' || 
+                  seleccionTipoEquipo === 'Portatil (Laptop)' ||
+                  seleccionTipoEquipo === 'Servidor (Server)'" 
+                  value="DELL INC.">DELL INC.
+              </option>
+              <option *ngIf="
+                  seleccionTipoEquipo === 'Torre (Desktop)' || 
+                  seleccionTipoEquipo === 'Portatil (Laptop)' || 
+                  seleccionTipoEquipo === 'Todo en Uno (All-in-One)' ||
+                  seleccionTipoEquipo === 'Servidor (Server)'" 
+                  value="HEWLETT PACKARD">HEWLETT PACKARD
+              </option>
+              <option *ngIf="
+                  seleccionTipoEquipo === 'Torre (Desktop)' || 
+                  seleccionTipoEquipo === 'Portatil (Laptop)' || 
+                  seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" 
+                  value="LENOVO">LENOVO
+              </option>
           </select>
         </div>
+    
+
+        <!-----------------------  ----------------------->
+        <!------- OPCIONES DE MODELO SEGUN SU MARCA ------>
+        <!-----------------------  ----------------------->
+
         
         <div class="contenido-opcion">
           <label>MODELO:</label>
-          <input class="opcionForm" type="text">
+
+          <select class="opcionForm select" [(ngModel)]="seleccionModelo" [ngModelOptions]="{standalone: true}">
+            <option value=""></option>
+            <!-- ASUS -->
+            <option *ngIf="seleccionMarca === 'ASUS' && seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" value="ZEN AIO 0540">ZEN AIO 0540</option>
+            <option *ngIf="seleccionMarca === 'ASUS' && seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" value="EXPERT CENTER AIO E540">EXPERT CENTER AIO E540</option>
+            <option *ngIf="seleccionMarca === 'ASUS' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="VIVOBOOK M1503QA">VIVOBOOK M1503QA</option>
+          
+            <!-- DELL INC -->
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="INSPIRON 530">INSPIRON 530</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="INSPIRON 545S">INSPIRON 545S</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="INSPIRON 580S">INSPIRON 580S</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="INSPIRON 620S">INSPIRON 620S</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="INSPIRON 660S">INSPIRON 660S</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="OPTIPLEX 3020">OPTIPLEX 3020</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="OPTIPLEX 3050">OPTIPLEX 3050</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="OPTIPLEX 3060">OPTIPLEX 3060</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="OPTIPLEX 3080">OPTIPLEX 3080</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="OPTIPLEX 3090">OPTIPLEX 3090</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="OPTIPLEX 3090 MICRO">OPTIPLEX 3090 MICRO</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="VOSTRO 200">VOSTRO 200</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="VOSTRO 220S">VOSTRO 220S</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="VOSTRO 260S">VOSTRO 260S</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="VOSTRO 3250">VOSTRO 3250</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="VOSTRO 3490">VOSTRO 3490</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Servidor (Server)' " value="POWER EDGE T300">POWER EDGE T300</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Servidor (Server)' " value="POWER EDGE T110 II">POWER EDGE T110 II</option>
+
+            <!-- HEWLETT PACKARD -->
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Torre (Desktop)'" value="PRO DESK 400 G1">PRO DESK 400 G1</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Torre (Desktop)'" value="PRO DESK 600 G1">PRO DESK 600 G1</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="245 G7">245 G7</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="LAPTOP 15-GW0XXX">LAPTOP 15-GW0XXX</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="PRO BOOK 440 G8">PRO BOOK 440 G8</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="PRO BOOK 445 G8">PRO BOOK 445 G8</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" value="DESKTOP 24-CB-1">DESKTOP 24-CB-1</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" value="PRO ONE 440">PRO ONE 440</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Servidor (Server)'" value="PRO LIANT ML110 GEN9">PRO LIANT ML110 GEN9</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Servidor (Server)'" value=""></option>
+
+            <!-- LENOVO -->
+            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'Torre (Desktop)'" value="SFF V530S">SFF V530S</option>
+            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="ThinkPad 21JQ">ThinkPad 21JQ</option>
+            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="80Sx">80Sx</option>
+            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" value="F0G100T0LD">F0G100T0LD</option>
+          </select>
         </div>
+
+        <!-----------------------  ----------------------->
+        <!------------ SISTEMAS OPERATIVOS --------------->
+        <!-----------------------  ----------------------->
 
         <div class="contenido-opcion">
           <label>SISTEMA OPERATIVO</label>
-          <select class="opcionForm select">
-              <option value=""></option>
+          <select class="opcionForm select" [(ngModel)]="seleccionSistemaOperativo" [ngModelOptions]="{standalone: true}">
+            <option value=""></option>
               <option value="WINDOWS">WINDOWS</option>
               <option value="LINUX">LINUX</option>
           </select>
@@ -57,16 +145,27 @@
 
         <div class="contenido-opcion">
           <label>VERSION S.O.</label>
-          <select class="opcionForm select">
-              <option value=""></option>
-              <option value="WINDOWS XP">WINDOWS XP</option>
-              <option value="WINDOWS VISTA">WINDOWS VISTA</option>
-              <option value="WINDOWS 7">WINDOWS 7</option>
-              <option value="WINDOWS 8">WINDOWS 8</option>
-              <option value="WINDOWS 10">WINDOWS 10</option>
-              <option value="WINDOWS 11">WINDOWS 11</option>
+          <select class="opcionForm select" [(ngModel)]="seleccionSistemaOperativoVersion">
+            <option value=""></option> <!-- Siempre visible -->
+        
+            <!-- Opciones para WINDOWS -->
+            <option *ngIf="seleccionSistemaOperativo === 'WINDOWS'" value="WINDOWS XP">WINDOWS XP</option>
+            <option *ngIf="seleccionSistemaOperativo === 'WINDOWS'" value="WINDOWS VISTA">WINDOWS VISTA</option>
+            <option *ngIf="seleccionSistemaOperativo === 'WINDOWS'" value="WINDOWS 7">WINDOWS 7</option>
+            <option *ngIf="seleccionSistemaOperativo === 'WINDOWS'" value="WINDOWS 8">WINDOWS 8</option>
+            <option *ngIf="seleccionSistemaOperativo === 'WINDOWS'" value="WINDOWS 10">WINDOWS 10</option>
+            <option *ngIf="seleccionSistemaOperativo === 'WINDOWS'" value="WINDOWS 11">WINDOWS 11</option>
+        
+            <!-- Opciones para LINUX -->
+            <option *ngIf="seleccionSistemaOperativo === 'LINUX'" value="UBUNTU">UBUNTU</option>
+            <option *ngIf="seleccionSistemaOperativo === 'LINUX'" value="DEBIAN">DEBIAN</option>
+            <option *ngIf="seleccionSistemaOperativo === 'LINUX'" value="FEDORA">FEDORA</option>
           </select>
         </div>
+
+        <!-----------------------  ----------------------->
+        <!--------------------- BITS --------------------->
+        <!-----------------------  ----------------------->
 
         <div class="contenido-opcion">
           <label>BITS</label>
@@ -77,9 +176,26 @@
           </select>
         </div>
 
+        <!-----------------------  ----------------------->
+        <!---------------------- RAM --------------------->
+        <!-----------------------  ----------------------->
+
         <div class="contenido-opcion">
           <label>TAMAÑO RAM</label>
-          <input class="opcionForm" type="text">
+          <select class="opcionForm select">
+            <option value=""></option>
+            <option value="1GB">1GB</option>
+            <option value="2GB">2GB</option>
+            <option value="3GB">3GB</option>
+            <option value="4GB">4GB</option>
+            <option value="6GB">6GB</option>
+            <option value="8GB">8GB</option>
+            <option value="12GB">12GB</option>
+            <option value="16GB">16GB</option>
+            <option value="24GB">24GB</option>
+            <option value="32GB">32GB</option>
+            <option value="64GB">64GB</option>
+          </select>
         </div>
 
         <div class="contenido-opcion">
@@ -93,14 +209,28 @@
           </select>
         </div>
         
+        <!-----------------------  ----------------------->
+        <!------------------ PROCESADOR ------------------>
+        <!-----------------------  ----------------------->
+
         <div class="contenido-opcion">
           <label>PROCESADOR</label>
           <input class="opcionForm" type="text">
         </div>
+
+        <!-----------------------  ----------------------->
+        <!--------------------- DISCO -------------------->
+        <!-----------------------  ----------------------->
   
         <div class="contenido-opcion">
           <label>TAMAÑO DISCO</label>
-          <input class="opcionForm" type="text">
+          <select class="opcionForm select">
+            <option value=""></option>
+            <option value="128GB">128GB</option>
+            <option value="250GB">250GB</option>
+            <option value="500GB">500GB</option>
+            <option value="1TB">1TB</option>
+          </select>
         </div>
 
         <div class="contenido-opcion">
@@ -109,9 +239,7 @@
             <option value=""></option>
             <option value="SSD">SSD</option>
             <option value="HDD">HDD</option>
-            <option value="SSD + SSD">SSD + SSD</option>
             <option value="SSD + HDD">SSD + HDD</option>
-            <option value="HDD + HDD">HDD + HDD</option>
           </select>
         </div>
         
@@ -153,6 +281,7 @@
           </label>
       </div>
         
+      
       </div>
     </div>
   </form>
