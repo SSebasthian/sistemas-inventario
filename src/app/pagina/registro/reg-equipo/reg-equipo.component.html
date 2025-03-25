@@ -8,7 +8,7 @@
             <mat-icon class="icono-img-prod">image</mat-icon>
               <input type="file" id="archivo-producto" disabled>
               <div>
-                <img  alt="Imagen" />
+                <img *ngIf="imagenUrl && seleccionTipoEquipo !== '' && seleccionMarca !== '' && seleccionModelo !== ''" [src]="imagenUrl" alt="Imagen del Modelo" />
               </div>
           </div>
         </div>
@@ -83,7 +83,7 @@
         <div class="contenido-opcion">
           <label>MODELO:</label>
 
-          <select class="opcionForm select" [(ngModel)]="seleccionModelo" [ngModelOptions]="{standalone: true}">
+          <select class="opcionForm select" [(ngModel)]="seleccionModelo" (ngModelChange)="ModeloSeleccionadoBuscarImg(seleccionModelo)" [ngModelOptions]="{standalone: true}">
             <option value=""></option>
             <!-- ASUS -->
             <option *ngIf="seleccionMarca === 'ASUS' && seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" value="ZEN AIO 0540">ZEN AIO 0540</option>
