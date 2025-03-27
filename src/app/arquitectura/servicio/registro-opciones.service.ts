@@ -3,6 +3,7 @@ import { Firestore, doc, getDoc, setDoc, } from '@angular/fire/firestore';
 import { Storage, getDownloadURL, ref } from '@angular/fire/storage';
 
 import Usuario from '../interface/usuario.interface';
+import Equipo from '../interface/equipo.interface';
 
 
 @Injectable({
@@ -29,7 +30,7 @@ export class RegistroOpcionesService {
       return null; // O puedes devolver algún mensaje de error si el usuario ya está registrado
     } else {
       // Si no existe, guardamos el nuevo usuario
-      alert("Agregado con Exito");
+      alert("Usuario agregado con Exito");
       return setDoc(usuarioReferencia, usuario);
     }
   }
@@ -52,6 +53,25 @@ export class RegistroOpcionesService {
     } catch (error) {
       console.error('Error obteniendo la imagen:', error);  // Si ocurre un error, lo mostramos
       return null;
+    }
+  }
+
+
+
+
+  async agregarEquipo(equipo: Equipo) {
+    // Primero verificamos si ya existe un documento con la cédula
+    const equipoReferencia = doc(this.firestore, 'equipo', equipo.serial.toString());
+    const revisaSerial = await getDoc(equipoReferencia);
+
+    if (revisaSerial.exists()) {
+      console.log("El equipo ya existe");
+      alert("El equipo ya existe");
+      return null; // O puedes devolver algún mensaje de error si el usuario ya está registrado
+    } else {
+      // Si no existe, guardamos el nuevo usuario
+      alert("Equipo agregado con Exito");
+      return setDoc(equipoReferencia, equipo);
     }
   }
 }

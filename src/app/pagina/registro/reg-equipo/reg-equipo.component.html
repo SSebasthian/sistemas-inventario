@@ -1,12 +1,12 @@
 <div class="contenedor-regEquipo">
-  <form id="form-registro-equipo"> 
+  <form id="form-registro-equipo" [formGroup]="formularioEquipo" (ngSubmit)="registrarEquipo()"> 
     <div class="contenido">
   
       <div class="fila-de-tres">
         <div class="contenedor-imagen">
           <div class="contenido-img">
             <mat-icon class="icono-img-prod">image</mat-icon>
-              <input type="file" id="archivo-producto" disabled>
+              <input type="file" id="archivo-producto" disabled="false">
               <div>
                 <img *ngIf="imagenUrl && seleccionTipoEquipo !== '' && seleccionMarca !== '' && seleccionModelo !== ''" [src]="imagenUrl" alt="Imagen del Modelo" />
               </div>
@@ -22,7 +22,7 @@
       
         <div class="contenido-opcion">
             <label>TIPO DE EQUIPO</label>
-            <select class="opcionForm select" [(ngModel)]="seleccionTipoEquipo" [ngModelOptions]="{standalone: true}">
+            <select class="opcionForm select" [(ngModel)]="seleccionTipoEquipo" formControlName="tipoEquipo">
                 <option value=""></option>
                 <option value="Torre (Desktop)">Torre (Desktop)</option>
                 <option value="Portatil (Laptop)">Portatil (Laptop)</option>
@@ -33,7 +33,7 @@
 
         <div class="contenido-opcion">
             <label>SERIAL:</label>
-            <input class="opcionForm" type="text">
+            <input class="opcionForm" type="text"  formControlName="serial">
         </div>  
 
 
@@ -45,7 +45,7 @@
         <div class="contenido-opcion">
           <label>MARCA</label>
 
-           <select class="opcionForm select" [(ngModel)]="seleccionMarca" [ngModelOptions]="{standalone: true}"> 
+           <select class="opcionForm select" [(ngModel)]="seleccionMarca" formControlName="marca"> 
               <option value=""></option>
               <option *ngIf="
                   seleccionTipoEquipo === 'Portatil (Laptop)' || 
@@ -83,7 +83,7 @@
         <div class="contenido-opcion">
           <label>MODELO:</label>
 
-          <select class="opcionForm select" [(ngModel)]="seleccionModelo" (ngModelChange)="ModeloSeleccionadoBuscarImg(seleccionModelo)" [ngModelOptions]="{standalone: true}">
+          <select class="opcionForm select" [(ngModel)]="seleccionModelo" (ngModelChange)="ModeloSeleccionadoBuscarImg(seleccionModelo)" formControlName="modelo">
             <option value=""></option>
             <!-- ASUS -->
             <option *ngIf="seleccionMarca === 'ASUS' && seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" value="ZEN AIO 0540">ZEN AIO 0540</option>
@@ -136,7 +136,7 @@
 
         <div class="contenido-opcion">
           <label>SISTEMA OPERATIVO</label>
-          <select class="opcionForm select" [(ngModel)]="seleccionSistemaOperativo" [ngModelOptions]="{standalone: true}">
+          <select class="opcionForm select" [(ngModel)]="seleccionSistemaOperativo" formControlName="sistemaOperativo">
             <option value=""></option>
               <option value="WINDOWS">WINDOWS</option>
               <option value="LINUX">LINUX</option>
@@ -145,7 +145,7 @@
 
         <div class="contenido-opcion">
           <label>VERSION S.O.</label>
-          <select class="opcionForm select" [(ngModel)]="seleccionSistemaOperativoVersion">
+          <select class="opcionForm select" [(ngModel)]="seleccionSistemaOperativoVersion" formControlName="versionSistemaOperativo">
             <option value=""></option> <!-- Siempre visible -->
         
             <!-- Opciones para WINDOWS -->
@@ -169,7 +169,7 @@
 
         <div class="contenido-opcion">
           <label>BITS</label>
-          <select class="opcionForm select">
+          <select class="opcionForm select" formControlName="bits">
               <option value=""></option>
               <option value="32">32</option>
               <option value="64">64</option>
@@ -182,7 +182,7 @@
 
         <div class="contenido-opcion">
           <label>TAMAÑO RAM</label>
-          <select class="opcionForm select">
+          <select class="opcionForm select" formControlName="ram">
             <option value=""></option>
             <option value="1GB">1GB</option>
             <option value="2GB">2GB</option>
@@ -200,7 +200,7 @@
 
         <div class="contenido-opcion">
           <label>TIPO DE RAM</label>
-          <select class="opcionForm select">
+          <select class="opcionForm select" formControlName="tipoRam">
             <option value=""></option>
             <option value="DDR2">DDR2</option>
             <option value="DDR3">DDR3</option>
@@ -215,7 +215,7 @@
 
         <div class="contenido-opcion">
           <label>PROCESADOR</label>
-          <input class="opcionForm" type="text">
+          <input class="opcionForm" type="text" formControlName="procesador">
         </div>
 
         <!-----------------------  ----------------------->
@@ -224,7 +224,7 @@
   
         <div class="contenido-opcion">
           <label>TAMAÑO DISCO</label>
-          <select class="opcionForm select">
+          <select class="opcionForm select" formControlName="disco">
             <option value=""></option>
             <option value="128GB">128GB</option>
             <option value="250GB">250GB</option>
@@ -235,7 +235,7 @@
 
         <div class="contenido-opcion">
           <label>TIPO DE DISCO</label>
-          <select class="opcionForm select">
+          <select class="opcionForm select" formControlName="tipoDisco">
             <option value=""></option>
             <option value="SSD">SSD</option>
             <option value="HDD">HDD</option>
@@ -245,22 +245,22 @@
         
         <div class="contenido-opcion">
           <label>NUMERO DE PLACA</label>
-          <input class="opcionForm" type="text">
+          <input class="opcionForm" type="text" formControlName="plaqueta">
         </div>
 
         <div class="contenido-opcion">
           <label>FACTURA</label>
-          <input class="opcionForm" type="text">
+          <input class="opcionForm" type="text" formControlName="ordenCompra">
         </div>
 
         <div class="contenido-opcion">
           <label>FECHA DE COMPRA</label>
-          <input class="opcionForm" type="date">
+          <input class="opcionForm" type="date" formControlName="fechaCompra">
         </div>
 
         <div class="contenido-opcion">
           <label>ESTADO</label>
-          <select class="opcionForm select">
+          <select class="opcionForm select" formControlName="estado">
               <option value="NUEVO" title="El equipo está en perfectas condiciones, puede ser un equipo recién adquirido o recién salido de la fábrica.">NUEVO</option>
               <option value="BUEN ESTADO" title="El equipo está funcionando correctamente, Es un equipo que todavía cumple su función de manera eficiente.">BUEN ESTADO</option>
               <option value="ESTADO REGULAR" title="El equipo muestra algunos signos de desgaste o mal uso, pero aún es funcional.">ESTADO REGULAR</option>
@@ -271,7 +271,7 @@
       
         <div class="contenido-opcion textarea">
           <label for="descripcion">DESCRIPCION:</label>
-          <textarea> </textarea>
+          <textarea formControlName="descripcion"> </textarea>
         </div>
 
         <div>
