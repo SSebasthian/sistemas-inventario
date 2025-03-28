@@ -6,7 +6,7 @@
         <div class="contenedor-imagen">
           <div class="contenido-img">
             <mat-icon class="icono-img-prod">image</mat-icon>
-              <input type="file" id="archivo-producto" disabled="false">
+              <input type="file" id="archivo-producto" [disabled]="false" formControlName="imgEquipo">
               <div>
                 <img *ngIf="imagenUrl && seleccionTipoEquipo !== '' && seleccionMarca !== '' && seleccionModelo !== ''" [src]="imagenUrl" alt="Imagen del Modelo" />
               </div>
@@ -24,10 +24,10 @@
             <label>TIPO DE EQUIPO</label>
             <select class="opcionForm select" [(ngModel)]="seleccionTipoEquipo" formControlName="tipoEquipo">
                 <option value=""></option>
-                <option value="Torre (Desktop)">Torre (Desktop)</option>
-                <option value="Portatil (Laptop)">Portatil (Laptop)</option>
-                <option value="Todo en Uno (All-in-One)">Todo en Uno (All-in-One)</option>
-                <option value="Servidor (Server)">Servidor (Server)</option>
+                <option value="TORRE (DESKTOP)">TORRE (DESKTOP)</option>
+                <option value="PORTATIL (LAPTOP)">PORTATIL (LAPTOP)</option>
+                <option value="TODO EN UNO (ALL-IN-ONE)">TODO EN UNO (ALL-IN-ONE)</option>
+                <option value="SERVIDOR (SERVER)">SERVIDOR (SERVER)</option>
             </select>
         </div>
 
@@ -48,27 +48,27 @@
            <select class="opcionForm select" [(ngModel)]="seleccionMarca" formControlName="marca"> 
               <option value=""></option>
               <option *ngIf="
-                  seleccionTipoEquipo === 'Portatil (Laptop)' || 
-                  seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" 
+                  seleccionTipoEquipo === 'PORTATIL (LAPTOP)' || 
+                  seleccionTipoEquipo === 'TODO EN UNO (ALL-IN-ONE)'" 
                   value="ASUS">ASUS
               </option>
               <option *ngIf="
-                  seleccionTipoEquipo === 'Torre (Desktop)' || 
-                  seleccionTipoEquipo === 'Portatil (Laptop)' ||
-                  seleccionTipoEquipo === 'Servidor (Server)'" 
+                  seleccionTipoEquipo === 'TORRE (DESKTOP)' || 
+                  seleccionTipoEquipo === 'PORTATIL (LAPTOP)' ||
+                  seleccionTipoEquipo === 'SERVIDOR (SERVER)'" 
                   value="DELL INC.">DELL INC.
               </option>
               <option *ngIf="
-                  seleccionTipoEquipo === 'Torre (Desktop)' || 
-                  seleccionTipoEquipo === 'Portatil (Laptop)' || 
-                  seleccionTipoEquipo === 'Todo en Uno (All-in-One)' ||
-                  seleccionTipoEquipo === 'Servidor (Server)'" 
+                  seleccionTipoEquipo === 'TORRE (DESKTOP)' || 
+                  seleccionTipoEquipo === 'PORTATIL (LAPTOP)' || 
+                  seleccionTipoEquipo === 'TODO EN UNO (ALL-IN-ONE)' ||
+                  seleccionTipoEquipo === 'SERVIDOR (SERVER)'" 
                   value="HEWLETT PACKARD">HEWLETT PACKARD
               </option>
               <option *ngIf="
-                  seleccionTipoEquipo === 'Torre (Desktop)' || 
-                  seleccionTipoEquipo === 'Portatil (Laptop)' || 
-                  seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" 
+                  seleccionTipoEquipo === 'TORRE (DESKTOP)' || 
+                  seleccionTipoEquipo === 'PORTATIL (LAPTOP)' || 
+                  seleccionTipoEquipo === 'TODO EN UNO (ALL-IN-ONE)'" 
                   value="LENOVO">LENOVO
               </option>
           </select>
@@ -86,47 +86,47 @@
           <select class="opcionForm select" [(ngModel)]="seleccionModelo" (ngModelChange)="ModeloSeleccionadoBuscarImg(seleccionModelo)" formControlName="modelo">
             <option value=""></option>
             <!-- ASUS -->
-            <option *ngIf="seleccionMarca === 'ASUS' && seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" value="ZEN AIO 0540">ZEN AIO 0540</option>
-            <option *ngIf="seleccionMarca === 'ASUS' && seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" value="EXPERT CENTER AIO E540">EXPERT CENTER AIO E540</option>
-            <option *ngIf="seleccionMarca === 'ASUS' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="VIVOBOOK M1503QA">VIVOBOOK M1503QA</option>
+            <option *ngIf="seleccionMarca === 'ASUS' && seleccionTipoEquipo === 'TODO EN UNO (ALL-IN-ONE)'" value="ZEN AIO 0540">ZEN AIO 0540</option>
+            <option *ngIf="seleccionMarca === 'ASUS' && seleccionTipoEquipo === 'TODO EN UNO (ALL-IN-ONE)'" value="EXPERT CENTER AIO E540">EXPERT CENTER AIO E540</option>
+            <option *ngIf="seleccionMarca === 'ASUS' && seleccionTipoEquipo === 'PORTATIL (LAPTOP)'" value="VIVOBOOK M1503QA">VIVOBOOK M1503QA</option>
           
             <!-- DELL INC -->
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="INSPIRON 530">INSPIRON 530</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="INSPIRON 545S">INSPIRON 545S</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="INSPIRON 580S">INSPIRON 580S</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="INSPIRON 620S">INSPIRON 620S</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="INSPIRON 660S">INSPIRON 660S</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="OPTIPLEX 3020">OPTIPLEX 3020</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="OPTIPLEX 3050">OPTIPLEX 3050</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="OPTIPLEX 3060">OPTIPLEX 3060</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="OPTIPLEX 3080">OPTIPLEX 3080</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="OPTIPLEX 3090">OPTIPLEX 3090</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="OPTIPLEX 3090 MICRO">OPTIPLEX 3090 MICRO</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="VOSTRO 200">VOSTRO 200</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="VOSTRO 220S">VOSTRO 220S</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="VOSTRO 260S">VOSTRO 260S</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Torre (Desktop)' " value="VOSTRO 3250">VOSTRO 3250</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="VOSTRO 3490">VOSTRO 3490</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Servidor (Server)' " value="POWER EDGE T300">POWER EDGE T300</option>
-            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'Servidor (Server)' " value="POWER EDGE T110 II">POWER EDGE T110 II</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="INSPIRON 530">INSPIRON 530</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="INSPIRON 545S">INSPIRON 545S</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="INSPIRON 580S">INSPIRON 580S</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="INSPIRON 620S">INSPIRON 620S</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="INSPIRON 660S">INSPIRON 660S</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="OPTIPLEX 3020">OPTIPLEX 3020</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="OPTIPLEX 3050">OPTIPLEX 3050</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="OPTIPLEX 3060">OPTIPLEX 3060</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="OPTIPLEX 3080">OPTIPLEX 3080</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="OPTIPLEX 3090">OPTIPLEX 3090</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="OPTIPLEX 3090 MICRO">OPTIPLEX 3090 MICRO</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="VOSTRO 200">VOSTRO 200</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="VOSTRO 220S">VOSTRO 220S</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="VOSTRO 260S">VOSTRO 260S</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'TORRE (DESKTOP)' " value="VOSTRO 3250">VOSTRO 3250</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'PORTATIL (LAPTOP)'" value="VOSTRO 3490">VOSTRO 3490</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'SERVIDOR (SERVER)' " value="POWER EDGE T300">POWER EDGE T300</option>
+            <option *ngIf="seleccionMarca === 'DELL INC.' && seleccionTipoEquipo === 'SERVIDOR (SERVER)' " value="POWER EDGE T110 II">POWER EDGE T110 II</option>
 
             <!-- HEWLETT PACKARD -->
-            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Torre (Desktop)'" value="PRO DESK 400 G1">PRO DESK 400 G1</option>
-            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Torre (Desktop)'" value="PRO DESK 600 G1">PRO DESK 600 G1</option>
-            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="245 G7">245 G7</option>
-            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="LAPTOP 15-GW0XXX">LAPTOP 15-GW0XXX</option>
-            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="PRO BOOK 440 G8">PRO BOOK 440 G8</option>
-            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="PRO BOOK 445 G8">PRO BOOK 445 G8</option>
-            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" value="DESKTOP 24-CB-1">DESKTOP 24-CB-1</option>
-            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" value="PRO ONE 440">PRO ONE 440</option>
-            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Servidor (Server)'" value="PRO LIANT ML110 GEN9">PRO LIANT ML110 GEN9</option>
-            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'Servidor (Server)'" value=""></option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'TORRE (DESKTOP)'" value="PRO DESK 400 G1">PRO DESK 400 G1</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'TORRE (DESKTOP)'" value="PRO DESK 600 G1">PRO DESK 600 G1</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'PORTATIL (LAPTOP)'" value="245 G7">245 G7</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'PORTATIL (LAPTOP)'" value="LAPTOP 15-GW0XXX">LAPTOP 15-GW0XXX</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'PORTATIL (LAPTOP)'" value="PRO BOOK 440 G8">PRO BOOK 440 G8</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'PORTATIL (LAPTOP)'" value="PRO BOOK 445 G8">PRO BOOK 445 G8</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'TODO EN UNO (ALL-IN-ONE)'" value="DESKTOP 24-CB-1">DESKTOP 24-CB-1</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'TODO EN UNO (ALL-IN-ONE)'" value="PRO ONE 440">PRO ONE 440</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'SERVIDOR (SERVER)'" value="PRO LIANT ML110 GEN9">PRO LIANT ML110 GEN9</option>
+            <option *ngIf="seleccionMarca === 'HEWLETT PACKARD' && seleccionTipoEquipo === 'SERVIDOR (SERVER)'" value=""></option>
 
             <!-- LENOVO -->
-            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'Torre (Desktop)'" value="SFF V530S">SFF V530S</option>
-            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="ThinkPad 21JQ">ThinkPad 21JQ</option>
-            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'Portatil (Laptop)'" value="80Sx">80Sx</option>
-            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'Todo en Uno (All-in-One)'" value="F0G100T0LD">F0G100T0LD</option>
+            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'TORRE (DESKTOP)'" value="SFF V530S">SFF V530S</option>
+            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'PORTATIL (LAPTOP)'" value="THINKPAD 21JQ">THINKPAD 21JQ</option>
+            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'PORTATIL (LAPTOP)'" value="80Sx">80SX</option>
+            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'TODO EN UNO (ALL-IN-ONE)'" value="F0G100T0LD">F0G100T0LD</option>
           </select>
         </div>
 

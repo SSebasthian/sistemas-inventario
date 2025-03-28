@@ -47,7 +47,9 @@ export class RegEquipoComponent {
       ordenCompra: new FormControl('', [Validators.required]),
       fechaCompra: new FormControl('', [Validators.required]),
       estado: new FormControl('', [Validators.required]),
-      descripcion: new FormControl('', [Validators.required])
+      descripcion: new FormControl(''),
+      imgEquipo: new FormControl('')  //almacenar la URL de la imagen
+
     });
     
   }
