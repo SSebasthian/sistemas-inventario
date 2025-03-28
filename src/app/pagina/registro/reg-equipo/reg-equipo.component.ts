@@ -28,7 +28,7 @@ export class RegEquipoComponent {
   seleccionSistemaOperativoVersion: string = '';
   imagenUrl: string | null = null;
   formularioEquipo: FormGroup;
-  
+
   constructor (private registroOpcionesService: RegistroOpcionesService){ 
     this.formularioEquipo = new FormGroup({
       serial: new FormControl('', [Validators.required]),

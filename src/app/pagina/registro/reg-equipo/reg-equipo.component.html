@@ -6,7 +6,7 @@
         <div class="contenedor-imagen">
           <div class="contenido-img">
             <mat-icon class="icono-img-prod">image</mat-icon>
-              <input type="file" id="archivo-producto" [disabled]="false" formControlName="imgEquipo">
+              <input type="text" id="archivo-producto" formControlName="imgEquipo" style="display: none;">
               <div>
                 <img *ngIf="imagenUrl && seleccionTipoEquipo !== '' && seleccionMarca !== '' && seleccionModelo !== ''" [src]="imagenUrl" alt="Imagen del Modelo" />
               </div>
@@ -125,7 +125,7 @@
             <!-- LENOVO -->
             <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'TORRE (DESKTOP)'" value="SFF V530S">SFF V530S</option>
             <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'PORTATIL (LAPTOP)'" value="THINKPAD 21JQ">THINKPAD 21JQ</option>
-            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'PORTATIL (LAPTOP)'" value="80Sx">80SX</option>
+            <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'PORTATIL (LAPTOP)'" value="80SX">80SX</option>
             <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'TODO EN UNO (ALL-IN-ONE)'" value="F0G100T0LD">F0G100T0LD</option>
           </select>
         </div>
