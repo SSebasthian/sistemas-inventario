@@ -29,11 +29,17 @@
                 <option value="TODO EN UNO (ALL-IN-ONE)">TODO EN UNO (ALL-IN-ONE)</option>
                 <option value="SERVIDOR (SERVER)">SERVIDOR (SERVER)</option>
             </select>
+            <div *ngIf="validacionFormRegEquipo('tipoEquipo')">
+              <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+            </div>
         </div>
 
         <div class="contenido-opcion">
             <label>SERIAL:</label>
             <input class="opcionForm" type="text"  formControlName="serial">
+            <div *ngIf="validacionFormRegEquipo('serial')">
+              <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+            </div>
         </div>  
 
 
@@ -72,6 +78,9 @@
                   value="LENOVO">LENOVO
               </option>
           </select>
+          <div *ngIf="validacionFormRegEquipo('marca')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
     
 
@@ -128,6 +137,9 @@
             <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'PORTATIL (LAPTOP)'" value="80SX">80SX</option>
             <option *ngIf="seleccionMarca === 'LENOVO' && seleccionTipoEquipo === 'TODO EN UNO (ALL-IN-ONE)'" value="F0G100T0LD">F0G100T0LD</option>
           </select>
+          <div *ngIf="validacionFormRegEquipo('modelo')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
 
         <!-----------------------  ----------------------->
@@ -141,6 +153,9 @@
               <option value="WINDOWS">WINDOWS</option>
               <option value="LINUX">LINUX</option>
           </select>
+          <div *ngIf="validacionFormRegEquipo('sistemaOperativo')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
 
         <div class="contenido-opcion">
@@ -161,6 +176,9 @@
             <option *ngIf="seleccionSistemaOperativo === 'LINUX'" value="DEBIAN">DEBIAN</option>
             <option *ngIf="seleccionSistemaOperativo === 'LINUX'" value="FEDORA">FEDORA</option>
           </select>
+          <div *ngIf="validacionFormRegEquipo('versionSistemaOperativo')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
 
         <!-----------------------  ----------------------->
@@ -174,6 +192,9 @@
               <option value="32">32</option>
               <option value="64">64</option>
           </select>
+          <div *ngIf="validacionFormRegEquipo('bits')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
 
         <!-----------------------  ----------------------->
@@ -196,6 +217,9 @@
             <option value="32GB">32GB</option>
             <option value="64GB">64GB</option>
           </select>
+          <div *ngIf="validacionFormRegEquipo('ram')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
 
         <div class="contenido-opcion">
@@ -207,6 +231,9 @@
             <option value="DDR4">DDR4</option>
             <option value="DDR5">DDR5</option>
           </select>
+          <div *ngIf="validacionFormRegEquipo('tipoRam')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
         
         <!-----------------------  ----------------------->
@@ -216,6 +243,9 @@
         <div class="contenido-opcion">
           <label>PROCESADOR</label>
           <input class="opcionForm" type="text" formControlName="procesador">
+          <div *ngIf="validacionFormRegEquipo('procesador')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
 
         <!-----------------------  ----------------------->
@@ -231,6 +261,9 @@
             <option value="500GB">500GB</option>
             <option value="1TB">1TB</option>
           </select>
+          <div *ngIf="validacionFormRegEquipo('disco')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
 
         <div class="contenido-opcion">
@@ -241,21 +274,33 @@
             <option value="HDD">HDD</option>
             <option value="SSD + HDD">SSD + HDD</option>
           </select>
+          <div *ngIf="validacionFormRegEquipo('tipoDisco')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
         
         <div class="contenido-opcion">
           <label>NUMERO DE PLACA</label>
           <input class="opcionForm" type="text" formControlName="plaqueta">
+          <div *ngIf="validacionFormRegEquipo('plaqueta')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
 
         <div class="contenido-opcion">
           <label>FACTURA</label>
           <input class="opcionForm" type="text" formControlName="ordenCompra">
+          <div *ngIf="validacionFormRegEquipo('ordenCompra')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
 
         <div class="contenido-opcion">
           <label>FECHA DE COMPRA</label>
           <input class="opcionForm" type="date" formControlName="fechaCompra">
+          <div *ngIf="validacionFormRegEquipo('fechaCompra')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
 
         <div class="contenido-opcion">
@@ -267,6 +312,9 @@
               <option value="ESTADO DEFICIENTE" title="El equipo tiene daños visibles y/o problemas de funcionamiento que afectan su rendimiento.  Es posible que aún funcione, pero no de manera óptima.">ESTADO DEFICIENTE</option>
               <option value="INOPERATIVO" title="El equipo ya no está operativo debido a fallas graves en el hardware.">INOPERATIVO</option>
           </select>
+          <div *ngIf="validacionFormRegEquipo('estado')">
+            <mat-icon class="icono-validacion" matTooltip="Campo Obligatorio" matTooltipPosition="above">error</mat-icon>
+          </div>
         </div>
       
         <div class="contenido-opcion textarea">

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip'; //Validacion error
 import { FormsModule, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RegistroOpcionesService } from '../../../arquitectura/servicio/registro-opciones.service';
 
@@ -71,6 +71,7 @@ export class RegEquipoComponent {
   
 
   // Función para verificar si un campo es inválido y ha sido tocado
+  //Validacion error
   validacionFormRegEquipo(campoDescrip: string): boolean | undefined {
     const campo = this.formularioEquipo.get(campoDescrip);
     return campo?.invalid && campo?.touched;
