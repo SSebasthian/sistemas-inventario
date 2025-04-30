@@ -16,6 +16,14 @@
                 </div>
             </div>
         </div>
+        <div class="carta" [ngClass]="{'selected': componenteActivo === 'impresora'}">
+            <div class="contenedor-caja">
+                <div class="contenido" (click)="mostrarComponenteRegistroImpresora()">
+                    <mat-icon>print</mat-icon>
+                    <h3>Impresora</h3>
+                </div>
+            </div>
+        </div>
         <div class="carta" [ngClass]="{'selected': componenteActivo === 'telefono'}">
             <div class="contenedor-caja">
                 <div class="contenido" (click)="mostrarComponenteRegistroTelefono()">
@@ -29,14 +37,6 @@
                 <div class="contenido" (click)="mostrarComponenteRegistroTablet()">
                     <mat-icon>tablet_mac</mat-icon>
                     <h3>Tablet</h3>
-                </div>
-            </div>
-        </div>
-        <div class="carta" [ngClass]="{'selected': componenteActivo === 'impresora'}">
-            <div class="contenedor-caja">
-                <div class="contenido" (click)="mostrarComponenteRegistroImpresora()">
-                    <mat-icon>print</mat-icon>
-                    <h3>Impresora</h3>
                 </div>
             </div>
         </div>
